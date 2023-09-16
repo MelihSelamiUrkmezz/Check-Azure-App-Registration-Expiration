@@ -22,9 +22,10 @@ This Python script automates the process of checking the expiration time of keys
     ![alt text](images/require-permissions.png)
 
    - In the application, there are 3 pieces of information regarding the app registration used by Azure.
-
-   ![alt text](images/datas.png)
-   ![alt text](images/datas2.png)
+   - Application ID
+   - Tenant ID
+   - Client Secret
+   
 
 4. **Run the Script**
    - To run the script, use a terminal or command prompt: `python main.py`
