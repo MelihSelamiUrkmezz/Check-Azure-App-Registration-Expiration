@@ -1,0 +1,9 @@
+azure-core==1.29.3
+azure-identity==1.14.0
+msal==1.23.0
+msal-extensions==1.0.0
+msgraph-core==0.2.2
+requests==2.31.0
+urllib3==2.0.4
+pandas
+openpyxl

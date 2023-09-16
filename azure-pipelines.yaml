@@ -1,0 +1,58 @@
+trigger: none
+pr: none
+
+schedules:
+- cron: "00 06 * * *"
+  always: true
+  branches:
+    include:
+    - main 
+variables:
+- group: all_configs
+
+steps:
+- script: |
+    ASTENANTID=$(as_tenant_id)
+    ASCLIENTID=$(as_client_id)
+    ASCLIENTSECRET=$(as_client_secret)
+    DTG1CLIENTID=$(dtekg1_client_id)
+    DTG1CLIENTSECRET=$(dtekg1_client_secret)
+    DTG1TENANTID=$(dtekg1_tenant_id)
+    DTG2CLIENTID=$(dtekg2_client_id)
+    DTG2CLIENTSECRET=$(dtekg2_client_secret)
+    DTG2TENANTID=$(dtekg2_tenant_id)
+    INOCLIENTID=$(ino_client_id)
+    INOCLIENTSECRET=$(ino_client_secret)
+    INOTENANTID=$(ino_tenant_id)
+    INSCLIENTID=$(insaat_client_id)
+    INSCLIENTSECRET=$(insaat_client_secret)
+    INSTENANTID=$(insaat_enant_id)
+    OTOG1CLIENTID=$(otog1_client_id)
+    OTOG1CLIENTSECRET=$(otog1_client_secret)
+    OTOG1TENANTID=$(otog1_tenant_id)
+    OTOSCLIENTID=$(otoservis_client_id)
+    OTOSCLIENTSECRET=$(otoservis_client_secret)
+    OTOSTENANTID=$(otoservis_tenant_id)
+    TSCLIENTID=$(test_client_id)
+    TSCLIENTSECRET=$(test_client_secret)
+    TSTENANTID=$(test_tenant_id)
+    TRCLIENTID=$(trafik_client_id)
+    TRCLIENTSECRET=$(trafik_client_secret)
+    TRTENANTID=$(trafik_tenant_id)
+    VDFCLIENTID=$(vdf_client_id)
+    VDFCLIENTSECRET=$(vdf_client_secret)
+    VDFTENANTID=$(vdf_tenant_id)
+    ZECLIENTID=$(zeyrek_client_id)
+    ZECLIENTSECRET=$(zeyrek_client_secret)
+    ZETENANTID=$(zeyrek_tenant_id)
+    ZICLIENTID=$(zingat_client_id)
+    ZICLIENTSECRET=$(zingat_client_secret)
+    ZITENANTID=$(zingat_tenant_id)
+    DRCLIENTID=$(dream_client_id)
+    DRCLIENTSECRET=$(dream_client_secret)
+    DRTENANTID=$(dram_tenant_id)
+    USERID=$(userId)
+   
+    pip install -r requirements.txt
+    python script.py --ASTENANTID "$ASTENANTID" --ASCLIENTID "$ASCLIENTID" --ASCLIENTSECRET "$ASCLIENTSECRET" --DTG1CLIENTID "$DTG1CLIENTID" --DTG1CLIENTSECRET "$DTG1CLIENTSECRET" --DTG1TENANTID "$DTG1TENANTID" --DTG2CLIENTID "$DTG2CLIENTID" --DTG2CLIENTSECRET "$DTG2CLIENTSECRET" --DTG2TENANTID "$DTG2TENANTID" --INOCLIENTID "$INOCLIENTID" --INOCLIENTSECRET "$INOCLIENTSECRET" --INOTENANTID "$INOTENANTID" --INSCLIENTID "$INSCLIENTID" --INSCLIENTSECRET "$INSCLIENTSECRET" --INSTENANTID "$INSTENANTID" --OTOG1CLIENTID "$OTOG1CLIENTID" --OTOG1CLIENTSECRET "$OTOG1CLIENTSECRET" --OTOG1TENANTID "$OTOG1TENANTID" --OTOSCLIENTID "$OTOSCLIENTID" --OTOSCLIENTSECRET "$OTOSCLIENTSECRET" --OTOSTENANTID "$OTOSTENANTID" --TSCLIENTID "$TSCLIENTID" --TSCLIENTSECRET "$TSCLIENTSECRET" --TSTENANTID "$TSTENANTID" --TRCLIENTID "$TRCLIENTID" --TRCLIENTSECRET "$TRCLIENTSECRET" --TRTENANTID "$TRTENANTID" --VDFCLIENTID "$VDFCLIENTID" --VDFCLIENTSECRET "$VDFCLIENTSECRET" --VDFTENANTID "$VDFTENANTID" --ZECLIENTID "$ZECLIENTID" --ZECLIENTSECRET "$ZECLIENTSECRET" --ZETENANTID "$ZETENANTID" --ZICLIENTID "$ZICLIENTID" --ZICLIENTSECRET "$ZICLIENTSECRET" --ZITENANTID "$ZITENANTID" --DRCLIENTID "$DRCLIENTID" --DRCLIENTSECRET "$DRCLIENTSECRET" --DRTENANTID "$DRTENANTID" --USERID "$USERID" 
+  displayName: 'Run python script'
